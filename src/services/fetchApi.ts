@@ -5,11 +5,18 @@ export const fetchChampionsList = async () => {
     'https://ddragon.leagueoflegends.com/cdn/14.4.1/data/pt_BR/champion.json',
   );
   const data = await response.json();
-  return data.data.map((champion: ChampionListType) => ({
-    championName: champion.name,
-    championTitle: champion.title,
-    championBlurb: champion.blurb,
-    championTags: champion.tags,
-    championImg: `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.name}_0.jpg`,
-  }));
+
+  const handleData = Object.values(data.data).map((value: unknown) => {
+    const { name, blurb, id, partype, title } = value as ChampionListType;
+
+    return {
+      name,
+      blurb,
+      id,
+      partype,
+      title,
+      img: `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_0.jpg`,
+    };
+  });
+  return handleData;
 };

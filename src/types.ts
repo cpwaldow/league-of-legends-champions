@@ -45,3 +45,12 @@ export type ChampionListType = {
     attackspeed: number;
   };
 };
+
+export type ChampionInfoType = {
+  name: string;
+  blurb: string;
+  id: string;
+  partype: string;
+  title: string;
+  img: string;
+};
