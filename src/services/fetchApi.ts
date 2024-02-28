@@ -1,4 +1,4 @@
-import { ChampionListType } from '../types';
+import { handleChampionsList } from '../utils/handleChampionsList';
 
 export const fetchChampionsList = async () => {
   const response = await fetch(
@@ -6,17 +6,6 @@ export const fetchChampionsList = async () => {
   );
   const data = await response.json();
 
-  const handleData = Object.values(data.data).map((value: unknown) => {
-    const { name, blurb, id, partype, title } = value as ChampionListType;
-
-    return {
-      name,
-      blurb,
-      id,
-      partype,
-      title,
-      img: `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_0.jpg`,
-    };
-  });
+  const handleData = handleChampionsList(data.data);
   return handleData;
 };
