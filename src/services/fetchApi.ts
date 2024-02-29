@@ -3,5 +3,6 @@ export const fetchChampionsList = async () => {
     'https://ddragon.leagueoflegends.com/cdn/14.4.1/data/pt_BR/champion.json';
   const response = await fetch(API_URL);
   const data = await response.json();
+
   return data;
 };
