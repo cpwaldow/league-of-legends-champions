@@ -2,6 +2,8 @@ import { render, screen } from '@testing-library/react';
 import { vi } from 'vitest';
 import App from '../App';
 import { mockFetchChampionsList } from './mock/mockFetchChampionsList';
+import { mockStorageChampionsList } from './mock/mockStorageChampionsList';
+import { setStorage } from '../services/storage';
 
 describe('Testando fetch', () => {
   afterEach(() => vi.clearAllMocks());
@@ -32,5 +34,14 @@ describe('Testando fetch', () => {
     expect(mockFetch).toHaveBeenCalledWith(
       'https://ddragon.leagueoflegends.com/cdn/14.4.1/data/pt_BR/champion.json',
     );
+  });
+  it('Testando renderização direto do storage', () => {
+    setStorage(mockStorageChampionsList);
+    render(<App />);
+    const renderAatrox = screen.getByText('Aatrox');
+    const renderKarthus = screen.getByText('Karthus');
+
+    expect(renderAatrox).toBeInTheDocument();
+    expect(renderKarthus).toBeInTheDocument();
   });
 });

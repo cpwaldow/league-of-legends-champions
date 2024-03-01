@@ -2,15 +2,21 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import { fetchChampionsList } from './services/fetchApi';
 import { ChampionListType } from './types';
+import { setStorage, getStorage } from './services/storage';
 
 function App() {
   const [apiData, setApiData] = useState<ChampionListType[]>();
 
   useEffect(() => {
     const handleFetch = async () => {
+      if (localStorage.apiResult) {
+        setApiData(getStorage());
+        return;
+      }
       const data = await fetchChampionsList();
       const handleData: ChampionListType[] = Object.values(data.data);
       setApiData(handleData);
+      setStorage(handleData);
     };
     handleFetch();
   }, []);
