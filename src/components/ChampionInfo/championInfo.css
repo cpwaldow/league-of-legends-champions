@@ -1,0 +1,9 @@
+.championInfo__container {
+  text-align: center;
+}
+
+.championInfo__container > img {
+  max-width: 25rem;
+  max-height: 15rem;
+  border-radius: 1rem;
+}

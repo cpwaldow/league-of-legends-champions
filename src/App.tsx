@@ -3,6 +3,7 @@ import './App.css';
 import { fetchChampionsList } from './services/fetchApi';
 import { ChampionListType } from './types';
 import { setStorage, getStorage } from './services/storage';
+import ChampionInfo from './components/ChampionInfo';
 
 function App() {
   const [apiData, setApiData] = useState<ChampionListType[]>();
@@ -24,7 +25,10 @@ function App() {
   return (
     <>
       <h1>Welcome to Summoners Rift</h1>
-      {apiData && apiData.map((item) => <p key={item.name}>{item.name}</p>)}
+      <section style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem' }}>
+        {apiData &&
+          apiData.map((item) => <ChampionInfo key={item.name} info={item} />)}
+      </section>
     </>
   );
 }
