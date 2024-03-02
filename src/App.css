@@ -13,3 +13,8 @@ body {
   gap: 2rem;
   justify-content: center;
 }
+
+a {
+  color: black;
+  text-decoration: none;
+}
