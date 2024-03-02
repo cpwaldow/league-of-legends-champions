@@ -21,11 +21,12 @@ function App() {
     };
     handleFetch();
   }, []);
+  console.log(apiData);
 
   return (
     <>
-      <h1>Welcome to Summoners Rift</h1>
-      <section style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem' }}>
+      <h1 className='app__title'>Welcome to Summoners Rift</h1>
+      <section className='app__container'>
         {apiData &&
           apiData.map((item) => <ChampionInfo key={item.name} info={item} />)}
       </section>

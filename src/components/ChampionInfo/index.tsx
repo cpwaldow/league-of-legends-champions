@@ -7,7 +7,7 @@ type PropsType = {
 
 const ChampionInfo = ({ info }: PropsType) => {
   const handleImg = (championName: string) =>
-    `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championName}_0.jpg`;
+    `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${championName}_0.jpg`;
 
   return (
     <div className='championInfo__container' data-testid='champion'>
