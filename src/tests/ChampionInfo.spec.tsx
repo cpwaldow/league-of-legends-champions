@@ -18,7 +18,7 @@ describe('ChampionInfo componente', () => {
     expect(ivernElImg).toBeInTheDocument();
     expect(ivernElImg).toHaveAttribute(
       'src',
-      'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ivern_0.jpg',
+      'https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ivern_0.jpg',
     );
     expect(ivernName).toBeInTheDocument();
     expect(ivernTitle).toBeInTheDocument();
