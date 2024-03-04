@@ -54,7 +54,7 @@ export type ChampionPageStateType = {
     [key: string]: {
       allytips: string[];
       blurb: string;
-      enemytips: string;
+      enemytips: string[];
       id: string;
       image: {
         [key: string]: string | number;
