@@ -33,11 +33,13 @@ const ChampionPage = () => {
           <p>{champion.data[idString].lore}</p>
         </div>
       </div>
-
+      <h2 className='champion-page__main-role'>
+        {champion.data[idString].tags.join(' - ')}
+      </h2>
       <section className='champion-page__tips-list'>
         {champion.data[idString].allytips.length > 0 && (
           <div className='champion-page--background--green'>
-            <h2>{champion.data[idString].name} aliado</h2>
+            <h3>{champion.data[idString].name} aliado</h3>
             <ul>
               {champion.data[idString].allytips.map((item) => (
                 <li key={item}>{item}</li>
