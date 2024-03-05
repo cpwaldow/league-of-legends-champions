@@ -53,3 +53,22 @@
   font-weight: 400;
   margin-top: 2.5rem;
 }
+
+@media only screen and (max-width: 810px) {
+  .champion-page__tips-list, .champion-page__main-info {
+    flex-direction: column;
+  }
+
+  .champion-page__main-info {
+    gap: 1rem;
+  }
+
+  .champion-page__main-role {
+    margin-top: 1rem;
+  }
+
+  .champion-page--background--green , .champion-page--background--red {
+    width: auto;
+    padding: 2rem;
+  }
+}

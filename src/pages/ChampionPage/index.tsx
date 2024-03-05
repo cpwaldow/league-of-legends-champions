@@ -45,7 +45,7 @@ const ChampionPage = () => {
       <section className='champion-page__tips-list'>
         {champion.data[idString].allytips.length > 0 && (
           <div className='champion-page--background--green'>
-            <h3>{champion.data[idString].name} aliado</h3>
+            <h2>{champion.data[idString].name} aliado</h2>
             <ul>
               {champion.data[idString].allytips.map((item) => (
                 <li key={item}>{item}</li>
