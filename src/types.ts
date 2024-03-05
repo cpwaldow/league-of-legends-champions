@@ -65,7 +65,7 @@ export type ChampionPageStateType = {
       key: string;
       lore: string;
       name: string;
-      partytype: string;
+      partype: string;
       passive: {
         [key: string]:
           | string

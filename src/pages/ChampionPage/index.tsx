@@ -3,6 +3,7 @@ import { fetchChampionPage } from '../../services/fetchApi';
 import { useEffect, useState } from 'react';
 import { ChampionPageStateType } from '../../types';
 import './championPage.css';
+import ChampionSkills from '../../components/ChampionSkills';
 
 const ChampionPage = () => {
   const [champion, setChampion] = useState<ChampionPageStateType>();
@@ -19,22 +20,27 @@ const ChampionPage = () => {
 
   if (!champion) return <p>Carregando...</p>;
 
-  console.log(champion.data[idString]);
+  const championInfo = champion.data[idString];
+
+  console.log(championInfo);
+
   return (
     <section className='champion-page__container'>
       <div className='champion-page__main-info'>
         <img
           src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${idString}_0.jpg`}
-          alt={champion.data[idString].name}
+          alt={championInfo.name}
           className='champion-page__image'
         />
         <div className='champion-page__main-info__text'>
-          <h1>{champion.data[idString].name}</h1>
-          <p>{champion.data[idString].lore}</p>
+          <h1>
+            {championInfo.name} - {championInfo.title}
+          </h1>
+          <p>{championInfo.lore}</p>
         </div>
       </div>
       <h2 className='champion-page__main-role'>
-        {champion.data[idString].tags.join(' - ')}
+        {championInfo.tags.join(' - ')}
       </h2>
       <section className='champion-page__tips-list'>
         {champion.data[idString].allytips.length > 0 && (
@@ -60,6 +66,14 @@ const ChampionPage = () => {
           </div>
         )}
       </section>
+      <ChampionSkills
+        skills={{
+          passive: championInfo.passive,
+          spells: championInfo.spells,
+          resourse: championInfo.partype,
+          name: idString,
+        }}
+      />
     </section>
   );
 };
