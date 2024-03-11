@@ -23,8 +23,6 @@ const ChampionPage = () => {
 
   const championInfo = champion.data[idString];
 
-  // console.log(championInfo);
-
   return (
     <section className='champion-page__container'>
       <div className='champion-page__main-info'>

@@ -12,9 +12,6 @@ type ChampionSkinsType = {
 };
 
 const ChampionSkins = ({ skins, id }: ChampionSkinsType) => {
-  console.log(skins);
-  console.log(skins.slice(1));
-
   return (
     <div>
       <h3>Skins</h3>
