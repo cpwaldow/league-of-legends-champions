@@ -75,7 +75,10 @@ export type ChampionPageStateType = {
       };
       recommended: any[];
       skins: {
-        [key: string]: string | number;
+        chromas: boolean;
+        id: string;
+        name: string;
+        num: number;
       }[];
       spells: any[];
       stats: {

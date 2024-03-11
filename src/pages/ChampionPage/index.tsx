@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { ChampionPageStateType } from '../../types';
 import './championPage.css';
 import ChampionSkills from '../../components/ChampionSkills';
+import ChampionSkins from '../../components/ChampionSkins';
 
 const ChampionPage = () => {
   const [champion, setChampion] = useState<ChampionPageStateType>();
@@ -22,7 +23,7 @@ const ChampionPage = () => {
 
   const championInfo = champion.data[idString];
 
-  console.log(championInfo);
+  // console.log(championInfo);
 
   return (
     <section className='champion-page__container'>
@@ -74,6 +75,7 @@ const ChampionPage = () => {
           name: idString,
         }}
       />
+      <ChampionSkins skins={championInfo.skins} id={championInfo.id} />
     </section>
   );
 };
