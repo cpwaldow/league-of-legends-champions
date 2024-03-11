@@ -1,1 +1,0 @@
-const allTags = ['Fighter', 'Tank', 'Mage', 'Assassin', 'Marksman', 'Support']

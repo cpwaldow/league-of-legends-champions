@@ -34,13 +34,17 @@ const Carousel = ({ images, id }: ImagesProps) => {
 
   return (
     <div className='carousel'>
-      <button onClick={prevSlide}>&lt;</button>
+      <button onClick={prevSlide} data-testid='next-skin-btn'>
+        &lt;
+      </button>
       <img
         src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${images[currentIndex].num}.jpg`}
         alt={`slide-${currentIndex}`}
         className='championSkin__img'
       />
-      <button onClick={nextSlide}>&gt;</button>
+      <button onClick={nextSlide} data-testid='previous-skin-btn'>
+        &gt;
+      </button>
       <p>{images[currentIndex].name}</p>
     </div>
   );
