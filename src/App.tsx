@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import ChampionList from './pages/ChampionList';
 import Header from './components/Header';
 import Home from './pages/Home';
+import ChampionPage from './pages/ChampionPage';
 
 function App() {
   return (
@@ -12,12 +13,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/champion-list' element={<ChampionList />} />
-          <Route
-            path='/champion-list/:id'
-            element={
-              <p style={{ textAlign: 'center' }}>página em construção</p>
-            }
-          />
+          <Route path='/champion-list/:id' element={<ChampionPage />} />
         </Routes>
       </main>
     </>

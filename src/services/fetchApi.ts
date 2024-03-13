@@ -6,3 +6,10 @@ export const fetchChampionsList = async () => {
 
   return data;
 };
+
+export const fetchChampionPage = async (championId: string) => {
+  const URL = `https://ddragon.leagueoflegends.com/cdn/14.4.1/data/pt_BR/champion/${championId}.json`;
+  const response = await fetch(URL);
+  const data = await response.json();
+  return data;
+};

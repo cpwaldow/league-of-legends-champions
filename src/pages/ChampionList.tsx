@@ -16,7 +16,7 @@ const ChampionList = () => {
       }
       const data = await fetchChampionsList();
       const handleData: ChampionListType[] = Object.values(data.data);
-      // console.log('aqui', handleData);
+
       setApiData(handleData);
       setStorage(handleData);
     };
