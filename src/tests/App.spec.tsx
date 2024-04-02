@@ -12,6 +12,7 @@ describe('Componente App', () => {
     });
 
     expect(menuHomeElement).toBeInTheDocument();
+    expect(menuChampionsElement).toBeInTheDocument();
   });
 
   it('Texto de bem-vindo em diversas linguas é renderizado', () => {
