@@ -5,7 +5,7 @@ import { ChampionPageStateType } from '../../types';
 import './championPage.css';
 import ChampionSkills from '../../components/ChampionSkills';
 import ChampionSkins from '../../components/ChampionSkins';
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 
 const ChampionPage = () => {
   const [champion, setChampion] = useState<ChampionPageStateType>();
@@ -26,7 +26,6 @@ const ChampionPage = () => {
 
   return (
     <>
-      <Analytics />
       <section className='champion-page__container'>
         <div className='champion-page__main-info'>
           <img
@@ -78,6 +77,7 @@ const ChampionPage = () => {
         />
         <ChampionSkins skins={championInfo.skins} id={championInfo.id} />
       </section>
+      <Analytics />
     </>
   );
 };
